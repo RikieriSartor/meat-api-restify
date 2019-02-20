@@ -1,0 +1,18 @@
+stages:
+  - test
+
+cache:
+  paths:
+    - node_modules/
+
+test:
+  stage: test
+  image: beevelop/nodejs-python
+  variables:
+    SERVER_PORT: 3001
+    DB_URL: "mongodb://mongo/meatapi"
+  services:
+    - mongo
+  script: 
+    - npm i
+    - npm test
