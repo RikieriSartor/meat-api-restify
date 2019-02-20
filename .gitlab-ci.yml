@@ -14,14 +14,14 @@ test:
     DB_URL: "mongodb://mongo/meatapi"
   services:
     - mongo
-  script: 
+  script:
     - npm i
     - npm test
 
 deploy:
   stage: deploy
   image: rastasheep/ubuntu-sshd
-  before_script: 
+  before_script:
     - mkdir -p ~/.ssh
     - echo "$DEPLOY_KEY" | tr -d '\r' > ~/.ssh/id_rsa
     - chmod 600 ~/.ssh/id_rsa
