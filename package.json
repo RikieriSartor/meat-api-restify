@@ -4,6 +4,7 @@
   "description": "API de Restaurantes",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "test": "ts-node jest.startup.ts"
   },
   "keywords": [],
