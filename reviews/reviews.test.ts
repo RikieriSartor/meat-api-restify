@@ -18,8 +18,8 @@ test('post /reviews', ()=>{
     return request(address)
     .post('/reviews') 
     .set('Authorization', auth)
-    .send({
-        date: '2018-08-20T00:00:00',
+    .send({ 
+        date: '2018-08-21T03:25:00',
         rating: 4,
         comments: 'Awesome!',
         user: '5c33efe01f4aab45b8540bc1',
@@ -28,7 +28,7 @@ test('post /reviews', ()=>{
     .then(response=>{
         expect(response.status).toBe(200)
         expect(response.body._id).toBeDefined()
-        expect(response.body.date).toBe('2018-08-20T00:00:00.000Z')
+        expect(response.body.date).toBe('2018-08-21T03:25:00.000Z')
         expect(response.body.rating).toBe(4)
         expect(response.body.comments).toBe('Awesome!')
         expect(response.body.user).toBe('5c33efe01f4aab45b8540bc1')
